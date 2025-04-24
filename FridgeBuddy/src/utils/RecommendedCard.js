@@ -1,6 +1,6 @@
 import InformationPage from '../Pages/InformationPage';
 import { useNavigate,Link } from 'react-router';
-let CardImage = new URL('../assets/image5.jpg',import.meta.url).href;
+let CardImage = new URL('../assets/image1.avif',import.meta.url).href;
 export default function RecommendedCard({obj}){
   const fallbackImage = CardImage;
   let Navigate = useNavigate();

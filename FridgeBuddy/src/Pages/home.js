@@ -3,7 +3,7 @@ import { toggleMode } from '../Stores/slice1';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
 import RecipeOfTheDay from '../utils/RecipeOfTheDay';
-let CardImage1 = new URL('../assets/image5.jpg',import.meta.url).href;
+let CardImage1 = new URL('../assets/image1.avif',import.meta.url).href;
 let CardImage2 = new URL('../assets/image2.jpg',import.meta.url).href;
 function Home(){
     let isDark = useSelector((state)=>state.isDark.isDark);

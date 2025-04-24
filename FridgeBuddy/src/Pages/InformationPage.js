@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import Shimmer2 from "../utils/Shimmer2";
 import { useDispatch } from "react-redux";
 import {Add} from '../Stores/slice2';
-let CardImage = new URL('../assets/image5.jpg',import.meta.url).href;
+let CardImage = new URL('../assets/image1.avif',import.meta.url).href;
 export default function InformationPage(){
     let isDark = useSelector((state)=>state.isDark.isDark);
     let dispatch = useDispatch();

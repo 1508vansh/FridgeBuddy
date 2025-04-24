@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
 import { useSelector } from "react-redux";
-let CardImage = new URL('../assets/image5.jpg',import.meta.url).href;
+let CardImage = new URL('../assets/image1.avif',import.meta.url).href;
 export default function SearchByIngredients(){
     let [apiData,setApiData] = useState([]);
     let isDark = useSelector((state)=>state.isDark.isDark);
