@@ -3,7 +3,7 @@ import { toggleMode } from '../Stores/slice1';
 import { Heart } from "lucide-react"
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router';
-const logoUrl = new URL('../assets/Logo.png', import.meta.url).href;
+const logoUrl = new URL('../assets/FridgeBuddyLogo.png', import.meta.url).href;
 function Header(){
     let isDark = useSelector((state) => state.isDark.isDark);
     let dispatch = useDispatch();
