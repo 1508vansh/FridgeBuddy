@@ -1,6 +1,7 @@
 import {Link} from 'react-router'
 import {useState,useEffect} from 'react';
-let CardImage = new URL('../assets/image1.avif',import.meta.url).href;
+//let CardImage = new URL('../assets/image1.avif',import.meta.url).href;
+import CardImage from '../assets/image1.avif';
 export default function RecipeOfTheDay(){
       let [apiData,setApiData] = useState({});
        function getRandomNumber(){
