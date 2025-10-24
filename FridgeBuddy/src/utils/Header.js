@@ -1,22 +1,26 @@
-import React from 'react';
+import React, { use } from 'react';
 import { toggleMode } from '../Stores/slice1';
 import { Heart } from "lucide-react"
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router';
+import { useNavigate } from 'react-router';
+import { GiCook } from 'react-icons/gi';
 const logoUrl = new URL('../assets/FridgeBuddyLogo.png', import.meta.url).href;
 function Header(){
     let isDark = useSelector((state) => state.isDark.isDark);
     let dispatch = useDispatch();
     let count = useSelector((state)=>state.CountRecipe.count);
+    const navigate = useNavigate();
     return(
        <>
-       <div className='shadow-2xl shadow-gray-900 bg-gray-700'>
-       <div className='flex justify-between items-center bg-gray-700 p-2 md:mx-25 mx-5'>
+       <div className={`shadow-2xl shadow-gray-900 ${isDark?'bg-gray-700':'bg-white' } fixed top-3  w-[100%] rounded-4xl z-30`}>
+       <div className={`flex justify-between items-center ${isDark?'bg-gray-700':'bg-white' } z-30 rounded-4xl p-2 md:mx-25 mx-5`}>
         <div className='flex items-center justify-center gap-2'>
-            <div>
+            {/* <div>
                 <img className='sm:h-15 h-10 rounded-full' src={logoUrl} alt="Logo"/>
-            </div>
-            <div><p className='font-bold md:text-4xl sm:text-3xl sm:inline hidden text-xl text-white'>FridgeBuddy</p></div>
+            </div> */}
+             <GiCook onClick={()=>navigate('/')} className="h-12 w-12 mr-3 text-amber-500 animate-pulse" />
+            {/* <div><p className={`font-bold md:text-4xl sm:text-3xl sm:inline hidden text-xl ${isDark?'text-white':''}`}>Fridge<span className='text-amber-600 animate-pulse'>Buddy</span></p></div> */}
         </div>
         <div className='flex justify-between items-center gap-5'>
         <Link to={'/FavoriteRecipes'} className="relative w-fit hover:scale-115 duration-200">

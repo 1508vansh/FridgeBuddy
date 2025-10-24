@@ -22,7 +22,7 @@ export default function SearchByIngredients(){
     }
     useEffect(()=>{
       async function getApi(){
-         let Api = await fetch(`https://api.spoonacular.com/recipes/findByIngredients?ingredients=${text}&number=8&apiKey=f55da23d38cf47628f4c664311686db3`);
+         let Api = await fetch(`https://api.spoonacular.com/recipes/findByIngredients?ingredients=${text}&number=8&apiKey=${process.env.SPOONACULAR_API_KEY}`);
          let data = await Api.json();
          setApiData(data);
          console.log(data);

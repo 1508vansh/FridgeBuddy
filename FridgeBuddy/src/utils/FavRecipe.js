@@ -22,7 +22,7 @@ export default function FavRecipe(){
             count>0?
             arr.map((obj)=>{
                return(
-                 <div key={obj.id} className="h-55 border-1 border-gray-400 rounded-2xl flex flex-col py-1 pt-0.5 px-1 justify-center items-center">
+                 <div key={obj.id} className={`h-55 border-1 border-gray-400 rounded-2xl pt-24 flex flex-col py-1 pt-0.5 px-1 ${isDark?'text-white':'text-black'} justify-center items-center`}>
                   <div className="w-[100%] text-center flex rounded-2xl gap-3 justify-between items-center">
                      <div className="p-2 rounded-xl">
                         <img className="md:h-30 md:self-auto h-20 w-40 rounded-xl" src={obj?.image}/>

@@ -9,8 +9,7 @@ export default function RecommendedPage() {
     let isDark = useSelector((state)=>state.isDark.isDark);
     useEffect(()=>{
         async function getApi() {
-            let key = "f55da23d38cf47628f4c664311686db3";
-            let Api = await fetch(`https://api.spoonacular.com/recipes/complexSearch?query=indian&diet=vegetarian&number=12&apiKey=${key}`);
+            let Api = await fetch(`https://api.spoonacular.com/recipes/complexSearch?query=indian&diet=vegetarian&number=12&apiKey=${process.env.SPOONACULAR_API_KEY}`);
             let data = await Api.json();
             setRecData(data?.results);
             console.log(data)
@@ -19,7 +18,7 @@ export default function RecommendedPage() {
     },[])
     return(
         <>
-        <div className={`h-full py-4 ${isDark ? 'bg-gray-900' : 'bg-gray-200'}`}>
+        <div className={`h-full py-4 ${isDark ? 'bg-gray-900' : 'bg-gray-200'} pt-24`}>
           <div className="md:mx-25 mx-5 text-center">
             <div className="text-center flex justify-center items-center">
               <div className={`md:text-6xl text-3xl text-center pt-8 font-bold flex ${isDark ? 'text-white' : 'text-black'}`}>Recommended Recipes</div>

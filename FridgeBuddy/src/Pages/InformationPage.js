@@ -30,7 +30,7 @@ export default function InformationPage(){
     }
     useEffect(()=>{
         async function getApi() {
-            let Api = await fetch(`https://api.spoonacular.com/recipes/${id}/information?apiKey=f55da23d38cf47628f4c664311686db3`);
+            let Api = await fetch(`https://api.spoonacular.com/recipes/${id}/information?apiKey=${process.env.SPOONACULAR_API_KEY}`);
             let data = await Api.json();
             setInfoData(data);
             console.log(data);
@@ -39,10 +39,10 @@ export default function InformationPage(){
     },[]);
     return (
       <div>
-      <div id="top" className="w-full py-0.5"></div>
+      <div id="top" className="w-full"></div>
       {Object.keys(infoData).length === 0?<Shimmer2/>
        :
-        <div className={`min-h-screen ${isDark?'bg-gray-800':'bg-gray-50'} py-8 px-4 sm:px-6 lg:px-8`}>
+        <div className={`min-h-screen ${isDark?'bg-gray-800':'bg-gray-50'} py-8 px-4 pt-24 sm:px-6 lg:px-8`}>
           <div className="max-w-7xl mx-auto">
             {/* Image Section */}
             <div className="mb-8 relative group">
